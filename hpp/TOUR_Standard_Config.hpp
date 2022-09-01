@@ -2,13 +2,8 @@ enableItemsDropping = 0;
 disabledAI = 1;
 allowProfileGlasses = 1;
 
-
-// leave this code as is. It is default settings that Respawn Control will take over from
-respawn = 3;
-respawnDelay = 30;
-respawnDialog = 1;
-respawnTemplates[] = {"tickets"};
-respawnVehicleDelay = 30;
+// leave this code as is. Respawn control will set up all parameters for Arma 3 to work seemlessly with itself.
+#include "scripts\TOUR_RC\dialog\hpp\config.hpp"
 
 onLoadMissionTime = true;
 overviewPicture = "";

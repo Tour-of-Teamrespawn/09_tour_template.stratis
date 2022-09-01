@@ -3,9 +3,6 @@
 
 waitUntil {!isNil "TOUR_init_completed"};
 
-// Updates the objectives on JIP
-[] call A2S_tasksSync;
-
 // Runs the virtual arsenal for the player = check the virtual arsenal scripts for basic items you can add to players.
 TOUR_ammobox execVM "scripts\Virtual_arsenal\init.sqf";
 

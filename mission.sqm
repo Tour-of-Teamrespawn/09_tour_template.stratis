@@ -23,7 +23,7 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="09_tour_template_mods";
+sourceName="09_tour_template";
 addons[]=
 {
 	"A3_Characters_F",

@@ -1,3 +1,8 @@
+/*
+DO NOT EDIT THIS DIRECTLY, BUILD.PS1 will increment the minor version of this by 1 each time it runs
+###MISSION_VERSION 0.1
+*/
+
 // This file is run before the initServer.sqf and initLocalPlayer.sqf
 // Code in here is run for all machines!!!
 
@@ -8,10 +13,6 @@ waitUntil {scriptDone _d};
 // Run parameter file for lobby settings and respawn control
 _p = execVM "params.sqf";
 waitUntil {scriptDone _p};
-
-// Attach the logic module in the editor as a placeholder to pass information for the task system.
-_a = TOUR_logic execVM "a2s_multitask.sqf";
-waitUntil {scriptDone _a};
 
 enableRadio false;
 {
