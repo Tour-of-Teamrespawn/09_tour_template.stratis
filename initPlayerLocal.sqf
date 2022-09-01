@@ -25,7 +25,7 @@ TOUR_mission_color ppEffectEnable true;
 TOUR_officer addAction ["Report In", "scripts\control\endingAction.sqf", 0, 10, true, false, "", "(isNil {TOUR_logic getVariable 'TOUR_task_reportIn'}) && (player==leader group player) && ({(alive _x)&&((vehicle _x) distance (getMarkerPos ""TOUR_mkr_Start"") > 250)}count (playableUnits + switchableUnits) == 0) && (cursorTarget == _target) && (player distance _target < 2)"];
 
 // Runs the briefing script to populate information when in the map screen.
-#include "briefing.hpp";
+#include "hpp\briefing.hpp";
 
 // Run an intro from here - see the example for basic commands and intro
 _int = execVM "scripts\general\intro.sqf";

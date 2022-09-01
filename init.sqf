@@ -30,11 +30,9 @@ setViewDistance 2500;
 
 //setup support interface - even if no support is used, you can still use this to radio in to end the mission.
 
-_siAction = if (true) then
-{
+_siAction = if (true) then {
 	"(alive player) && ([player, ""ACRE_PRC148""] call acre_api_fnc_hasKindOfRadio)"
-}else
-{
+} else {
 	"(alive player) && (""ItemRadio"" in (assignedItems player))"
 };
 
