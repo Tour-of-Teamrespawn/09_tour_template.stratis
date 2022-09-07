@@ -14,15 +14,15 @@ sleep 5;
 
 _success = if 
 				(
-					("TOUR_objFind" call A2S_taskState == "SUCCEEDED")
+					("TOUR_objFind" call BIS_fnc_taskState == "SUCCEEDED")
 					&&
-					("TOUR_objTank" call A2S_taskState == "SUCCEEDED")
+					("TOUR_objTank" call BIS_fnc_taskState == "SUCCEEDED")
 					&&
-					("TOUR_objRadio" call A2S_taskState == "SUCCEEDED")
+					("TOUR_objRadio" call BIS_fnc_taskState == "SUCCEEDED")
 					&&
-					("TOUR_objtruck" call A2S_taskState == "SUCCEEDED")
+					("TOUR_objtruck" call BIS_fnc_taskState == "SUCCEEDED")
 					&&
-					("TOUR_objClear" call A2S_taskState == "SUCCEEDED")
+					("TOUR_objClear" call BIS_fnc_taskState == "SUCCEEDED")
 				) 
 				then {true} else {false};
 
@@ -30,30 +30,25 @@ if (isServer) then
 {
 	[]spawn
 	{
-		if ("TOUR_objFind" call A2S_taskState != "SUCCEEDED") then
+		if ("TOUR_objFind" call BIS_fnc_taskState != "SUCCEEDED") then
 		{
-			["TOUR_objFind", "failed"] call A2S_setTaskState;
-			"TOUR_objFind" call A2S_taskCommit;
+			["TOUR_objFind", "failed", false] call BIS_fnc_taskSetState;
 		};
-		if ("TOUR_objTank" call A2S_taskState != "SUCCEEDED") then
+		if ("TOUR_objTank" call BIS_fnc_taskState != "SUCCEEDED") then
 		{
-			["TOUR_objTank", "failed"] call A2S_setTaskState;
-			"TOUR_objTank" call A2S_taskCommit;
+			["TOUR_objTank", "failed", false] call BIS_fnc_taskSetState;
 		};
-		if ("TOUR_objRadio" call A2S_taskState != "SUCCEEDED") then
+		if ("TOUR_objRadio" call BIS_fnc_taskState != "SUCCEEDED") then
 		{
-			["TOUR_objRadio", "failed"] call A2S_setTaskState;
-			"TOUR_objRadio" call A2S_taskCommit;
+			["TOUR_objRadio", "failed", false] call BIS_fnc_taskSetState;
 		};
-		if ("TOUR_objtruck" call A2S_taskState != "SUCCEEDED") then
+		if ("TOUR_objtruck" call BIS_fnc_taskState != "SUCCEEDED") then
 		{
-			["TOUR_objtruck", "failed"] call A2S_setTaskState;
-			"TOUR_objtruck" call A2S_taskCommit;
+			["TOUR_objtruck", "failed", false] call BIS_fnc_taskSetState;
 		};
-		if ("TOUR_objClear" call A2S_taskState != "SUCCEEDED") then
+		if ("TOUR_objClear" call BIS_fnc_taskState != "SUCCEEDED") then
 		{
-			["TOUR_objClear", "failed"] call A2S_setTaskState;
-			"TOUR_objClear" call A2S_taskCommit;
+			["TOUR_objClear", "failed", false] call BIS_fnc_taskSetState;
 		};
 	};	
 };

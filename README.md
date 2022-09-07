@@ -65,9 +65,10 @@ You will need to add pictures here for mission loading, and register any sounds 
 
 Edit this for map screen briefing and mission information and is ran on player machines only (INITLOCALPLAYER.SQF)
 
-### A2S_multiTask
+### TASK SYSTEM - setupObjectives.sqf
 
-A helpful structure for making tasks in an MP environment. THough many improvements have been made for this by BIS, I personally still use it because I am used to it and it works really well.
+Look at the task framework defined by BIS at https://community.bistudio.com/wiki/Arma_3:_Task_Framework 
+This simple system will help define your tasks in the setupObjectives.sqf, and you will complete and fail your tasks across multiple files.
 
 ### MISSION.SQM
 
