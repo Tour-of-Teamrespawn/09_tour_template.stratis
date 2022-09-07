@@ -3,7 +3,7 @@ disabledAI = 1;
 allowProfileGlasses = 1;
 
 // leave this code as is. Respawn control will set up all parameters for Arma 3 to work seemlessly with itself.
-#include "scripts\TOUR_RC\dialog\hpp\config.hpp"
+#include "..\scripts\TOUR_RC\dialog\hpp\config.hpp"
 
 onLoadMissionTime = true;
 overviewPicture = "";
