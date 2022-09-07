@@ -5,7 +5,7 @@
     TOUR build helper script to automatically bump version, pack as PBO, upload to Tour via FTP & start local dedicated server
 .NOTES
     Author: Andy455
-    Version: v0.7
+    Version: v0.8
 .LINK
     https://github.com/Tour-of-Teamrespawn/_build
 .EXAMPLE
@@ -40,6 +40,7 @@ param (
 if ($PSCmdlet.ShouldProcess('This script', 'Update script with latest version from GitHub')) {
 
     Write-Host "Getting and comparing GitHub script with this script..."
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     $NewScriptContents = (Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Tour-of-Teamrespawn/_build/main/build.ps1' -ErrorAction 'Stop').Content
 
     $CurrentScriptContents = Get-Content -Path $MyInvocation.MyCommand.Path -Raw
