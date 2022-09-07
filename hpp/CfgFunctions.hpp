@@ -1,13 +1,13 @@
 class CfgFunctions {
 	class TOUR {
 		class AI {
-			areaPatrols {};
-			enemyHouse {};
-			loadouts {};
-			mkrPatrols {};
-			mkrVehPatrols {};
-			moveInHouse {};
-			rndPatrol {};
+			class areaPatrols {};
+			class enemyHouse {};
+			class loadouts {};
+			class mkrPatrols {};
+			class mkrVehPatrols {};
+			class moveInHouse {};
+			class rndPatrol {};
 		};
 		class Debug {
 			class debugRPT {

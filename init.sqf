@@ -6,10 +6,6 @@ DO NOT EDIT THIS DIRECTLY, BUILD.PS1 will increment the minor version of this by
 // This file is run before the initServer.sqf and initLocalPlayer.sqf
 // Code in here is run for all machines!!!
 
-// Causes a big header in the RPT which makes the mission easier to find for debugging when checking the RPT file
-_d = execVM "scripts\general\debugRPT.sqf";
-waitUntil {scriptDone _d};
-
 // Run parameter file for lobby settings and respawn control
 _p = execVM "params.sqf";
 waitUntil {scriptDone _p};
@@ -20,10 +16,6 @@ enableRadio false;
 } forEach allUnits;
 
 TOUR_HQ = [WEST, "HQ"];
-
-// Set up lots of helpful functions in the scripts\functions folder.
-_fn = execVM "scripts\functions\functions_init.sqf";
-waitUntil {scriptDone _fn};
 
 // Change value in meters - larger numbers will affect performance for graphics and AI reactions!!!
 // If you are using aircraft, usually 5000+

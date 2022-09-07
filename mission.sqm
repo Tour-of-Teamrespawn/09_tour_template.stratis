@@ -6,11 +6,6 @@ class EditorData
 	scaleGridStep=1;
 	autoGroupingDist=10;
 	toggles=513;
-	mods[]=
-	{
-		"WBK_Zombies_AdvancedEditorSettings",
-		"3denEnhanced"
-	};
 	class ItemIDProvider
 	{
 		nextID=244;
@@ -22,9 +17,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={1743.6599,47.131115,5545.8179};
-		dir[]={0.9060505,-0.3366439,-0.2564047};
-		up[]={0.32392311,0.94163203,-0.091667525};
-		aside[]={-0.27229819,0,-0.96221292};
+		dir[]={0.81346613,-0.52810687,-0.24368933};
+		up[]={0.50589663,0.84917784,-0.15155119};
+		aside[]={-0.28697103,-4.3823093e-008,-0.957946};
 	};
 };
 binarizationWanted=0;
