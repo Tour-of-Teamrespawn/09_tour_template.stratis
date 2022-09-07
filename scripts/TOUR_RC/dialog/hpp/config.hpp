@@ -1,18 +1,18 @@
 // Sets Required BIS Respawn System To Be Compatible With RC
 
-delete respawn;
+// delete respawn;
 respawn = 3;
 
-delete respawnDelay;
+// delete respawnDelay;
 respawnDelay = 30;
 
-delete respawnDialog;
+// delete respawnDialog;
 respawnDialog = 1;
 
-delete respawnTemplates;
+// delete respawnTemplates;
 respawnTemplates[] = {"tickets"};
 
-delete respawnVehicleDelay;
+// delete respawnVehicleDelay;
 respawnVehicleDelay = 30;
 
 #include "admintool.hpp"

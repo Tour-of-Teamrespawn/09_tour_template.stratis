@@ -2,20 +2,21 @@
 
 ## Template components
 
-### BRIEFING.HPP
-Edit this for map screen briefing and mission information and is ran on player machines only (INITLOCALPLAYER.SQF)
-
 ### INIT.SQF
+
 sets up functions and code ran on all machines
 
 ### INITSERVER.SQF
+
 this should be where other scripts are called to set up the mission, such as objectives and enemy, so the server handles AI and mission control
 
 ### INITPLAYERLOCAL.SQF
+
 this is where things for player only that are not needed to be ran on dedicated servers, such as effects, loadouts. intro etc.
 
 ### FUNCTIONS FOLDER
-these are predefined functions. Do not edit unless you know what you are doing. You can add other functions to be called for your mission here by creating a 
+
+these are predefined functions. Do not edit unless you know what you are doing. You can add other functions to be called for your mission here by creating a
 function file "fn_functionName" and then adding it into the functions_init.sqf such as
 TOUR_fnc_functionName = compile preProcessFileLineNumbers "scripts\functions\fn_functionName.sqf";
 
@@ -23,17 +24,22 @@ fn_Loadouts.sqf - Here the server default AI settings are managed for existing o
                     Add the unit classes here to define if they are special forces or snipers, which will tailor the values for accuracy etc to the role.
 
 ### AMBIENT LIFE
-this is where scripts that can add friendly and enemy ambience to the area from walking and driving civilians. This is called from the INITSERVER.SQF. 
+
+this is where scripts that can add friendly and enemy ambience to the area from walking and driving civilians. This is called from the INITSERVER.SQF.
 alter the information passed to it in the INITSERVER.SQF as per commented instruction.
 
 ### TOUR_SI FOLDER
+
 this is where support interface resides. Do not alter.
 
 ### TOUR_RC FOLDER
+
 this is where respawn control resides. Do not alter.
 
 ### VIRTUAL ARSENAL FOLDER
+
 this is where you can setup aresenal loadouts specific to units. You can always edit unit loadouts for starting manually from the editor.
+
 1. create a folder titled as the faction name. (you can get this info by playing as that faction and typing "copytoclipboard faction player" in the debug console when testing in single player)
 2. create a file with the example structure shown, with the file name being the classname of the unit. (you can get this info by playing as that faction and typing "copytoclipboard typeof player" in the debug console when testing in single player)
 3. edit the loadouts with classnames of items, magazines and weapons as appropriate. The scripts are called from the INITLOCALPLAYER.sqf.
@@ -41,28 +47,39 @@ this is where you can setup aresenal loadouts specific to units. You can always 
 5. Using the arsenal in this example, will remove all loadouts and add only basic items. You can disable this commenting out line 31 in basicItems.sqf within the virtual arsenal folder.
 
 ### GENERAL FOLDER
+
 this contains misc scripts you want in your missions, such as basic intros, dust effects etc. Add to this as needed.
 
 ### ENDING missions
+
 this is generally done through the SETUPOBJECTIVES.sqf which can detect players dead from the respawn control functions. You can change the conditions in here for that.
 you can also make it (like in this example) to abort missions or report back in. In this example there is an action placed on the officer, that triggers code within endingAction.sqf and endingPlayer.sqf subsequently.
 The text generate is linked to the description.ext.
 
 ### DESCRIPTION.ext
+
 Lots of mission setup info is held in here, relating to speech, mission ending scenario's and dialogs. Go through and alter accordingly.
 You will need to add pictures here for mission loading, and register any sounds used.
 
+### BRIEFING.HPP
+
+Edit this for map screen briefing and mission information and is ran on player machines only (INITLOCALPLAYER.SQF)
+
 ### A2S_multiTask
+
 A helpful structure for making tasks in an MP environment. THough many improvements have been made for this by BIS, I personally still use it because I am used to it and it works really well.
 
 ### MISSION.SQM
+
 Do not alter - this contains all the info from the editor when you press save.
 
 ### PARAMS.SQF
-Information taken from the lobby settings and you can find further configuration for lobby game settings in the description.ext. 
+
+Information taken from the lobby settings and you can find further configuration for lobby game settings in the description.ext.
 This info is used to give to respawn control and time of day settings for example or anything else you can dream up needed for the mission.
 
-### STRINGTABLE.CSV 
+### STRINGTABLE.CSV
+
 needed to define HQ for radio comms - archane throwback to OFP never developed further in engine. You will need to change this to east or resistance for different sides.
 
 ## General advice
@@ -76,15 +93,15 @@ Local variable - these start with an underscore such as _myUnitVariable. These c
 
 Global varibales - these do not start with an underscore such as myUnitVariable. These can be seen by every script and within the game, providing they have been defined before they are checked against.
 
-As you can see from the example template mission, I have prefixed the variable with TOUR_ such as TOUR_HVT. Bohemia prefix their variables with BIS_. In otherwords, try to not use TOUR_ or BIS_. 
-Otherwise if they or have a variable name the same, and you overwrite it by redefining it, it will break the game. This could be done for mods as well, i.e. don't use ACE_ to prefix your variable names.
-There is a nice thing created at https://www.ofpec.com/ where you can register your prefix so that other mod or mission makers will not overwrite your variables (or less chance of it!).
-You are welcome to use TOUR_ . however please note that this is used for private mods and bolt on scripts such as respawn control and support interface using the prefixes TOUR_RC_ and TOUR_SI_ etc.
+As you can see from the example template mission, I have prefixed the variable with TOUR_such as TOUR_HVT. Bohemia prefix their variables with BIS_. In otherwords, try to not use TOUR_or BIS_.
+Otherwise if they or have a variable name the same, and you overwrite it by redefining it, it will break the game. This could be done for mods as well, i.e. don't use ACE_to prefix your variable names.
+There is a nice thing created at <https://www.ofpec.com/> where you can register your prefix so that other mod or mission makers will not overwrite your variables (or less chance of it!).
+You are welcome to use TOUR_ . however please note that this is used for private mods and bolt on scripts such as respawn control and support interface using the prefixes TOUR_RC_and TOUR_SI_ etc.
 Hopefully the naming convension should be clear and why should be careful or try to set up your own.
 
-There is much more to learn and discover. I would suggest you bookmark the commands wiki page https://community.bistudio.com/wiki/Category:Arma_3:_Scripting_Commands 
+There is much more to learn and discover. I would suggest you bookmark the commands wiki page <https://community.bistudio.com/wiki/Category:Arma_3:_Scripting_Commands>
 
-This document does not go through the editor controls or settings. 
+This document does not go through the editor controls or settings.
 
 ### Miscellaneous
 
